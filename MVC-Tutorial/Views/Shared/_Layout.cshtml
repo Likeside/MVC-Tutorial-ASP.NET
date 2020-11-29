@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+<p>Эта страница использует лэйаут</p>
+@RenderBody()
+<p>Ниже расположена секция футера</p>
+@RenderSection("Footer")
+</body>
+</html>

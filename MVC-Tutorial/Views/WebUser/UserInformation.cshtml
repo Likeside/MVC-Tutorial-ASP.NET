@@ -1,0 +1,75 @@
+@using System.Globalization
+@model MVC_Tutorial.Models.WebUser
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>WebUserFOrm</h2>
+
+@using(var form = Html.BeginForm())
+{
+    <div>
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+    </div>
+
+    <div>
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.NickName)
+        @Html.TextBoxFor(m => m.NickName)
+    </div>
+    <input type="submit" value="Submit" />
+}
+
+
+@using(var form = Html.BeginForm()) 
+{
+    <div>
+        @Html.LabelFor(m => m.NickName)
+        @Html.TextBoxFor(m => m.NickName)
+        @Html.ValidationMessageFor(m => m.NickName)
+    </div>
+    
+    <div>
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m => m.FirstName)
+
+    </div>
+    
+    <div>
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+        @Html.ValidationMessageFor(m => m.LastName)
+
+    </div>
+    
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+
+    </div>
+    
+    <div>
+        @Html.LabelFor(m => m.Birthday)
+        @Html.TextBoxFor(m => m.Birthday)
+        @Html.ValidationMessageFor(m => m.Birthday)
+
+    </div>
+    
+    @Html.ValidationSummary();
+    <input type="submit" value="Submit" />
+                                       
+}
+
+@section Footer
+{
+    <p>Footer section</p>
+}

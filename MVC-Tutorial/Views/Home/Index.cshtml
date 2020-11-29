@@ -1,0 +1,35 @@
+@using MVC_Tutorial.Models
+@model MVC_Tutorial.Models.Movie;
+
+
+<div>
+    <span style="font-size: 18pt;">Hello, <b>MVC</b> world!</span> 
+    @{
+        Func<dynamic, object> movieTemplate = @<div>@item.Title [@item.ReleaseDate.ToShortDateString()]</div>;
+
+        List<Movie> movies = new List<Movie>();
+        movies.Add(new Movie() { Title = "Forrest Gump", ReleaseDate = new DateTime(1994, 7, 6) });
+    }
+    <!--<span>The movie //Model.Title was released //Model.ReleaseDate.ToLongDateString()</!--<span>-->
+    
+    
+    @foreach (var movie in movies)
+    {
+        @movieTemplate(movie);
+    }
+    
+    
+    @await Html.PartialAsync("_Greeting")
+    
+    
+    @for (int i = 0; i < 3; i++)
+    {
+        @await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData) { { "index", i } })
+    }
+</div>
+
+
+@section Footer
+{
+    <p>Index footer</p>
+}
